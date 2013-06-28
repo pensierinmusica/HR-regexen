@@ -3,7 +3,7 @@ describe("your regexes", function(){
   // CHALLENGE: match an ip address
   it("should match ip addresses", function(){
 
-    var regex = /fixme/;
+    var regex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
 
     var tests = [
       ["a.b.c.d", false],
