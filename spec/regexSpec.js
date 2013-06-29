@@ -114,6 +114,7 @@ describe("your regexes", function(){
 
     var containsNearbyWords = function(haystack, needle){
       // ???
+      var words = haystack.split(/[\s,]/);
       return /* ?? */;
     };
 
