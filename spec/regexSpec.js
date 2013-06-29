@@ -29,7 +29,7 @@ describe("your regexes", function(){
   // - can only contain letters, spaces, underscores and hyphens.
   it("should filter usernames", function(){
 
-    var regex = /fixme/;
+    var regex = /^[a-zA-Z][a-zA-Z\s_-]{3,19}$/;
 
     var tests = [
       ["shawndrost", true],
@@ -64,8 +64,9 @@ describe("your regexes", function(){
   it("should extract text", function(){
 
     var extractText = function(str){
-      var matches = /fixme/.exec(str);
-      return /* something to do with matches?? */;
+      // var matches = /<.+>(.*)<\/.+>/.exec(str);
+      var matches = str.replace(/<[^>]+>/g, '');
+      return matches;
     };
 
     var tests = [
@@ -82,7 +83,7 @@ describe("your regexes", function(){
   // CHALLENGE: match a decimal number.
   it("should match decimal numbers", function(){
 
-    var regex = /fixme/;
+    var regex = /^-?\d*(\.\d+)?$/;
 
     var tests = [
       ["-0.0", true],
@@ -105,8 +106,8 @@ describe("your regexes", function(){
     })
   })
 
-  // CHALLENGE: given a string and a word, test if the word occurs two 
-  // times in quick succession (within 3 words) within the string.  You 
+  // CHALLENGE: given a string and a word, test if the word occurs two
+  // times in quick succession (within 3 words) within the string.  You
   // should use regexes, not because they're the best tool -- but because
   // you love pain.
   it("should detect nearby words", function(){
